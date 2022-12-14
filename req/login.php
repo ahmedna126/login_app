@@ -20,7 +20,7 @@ include "function.php";
             if ($stmt->rowCount() == 1){
                 $user = $stmt->fetch();
                 
-                if ($user['username'] == $username ){
+                if (strcasecmp($user['username'], $username)==0 ){
                     if (password_verify($password , $user['password'])){
                         
                         if (!isset($_SESSION)){
@@ -35,7 +35,7 @@ include "function.php";
                         if (isset($_POST['remember'])){
                             if($_POST['remember'] == 1){
                                 $token=  md5(bin2hex(random_bytes(40)));
-                                setcookie("token_user" , $token , time()+1000 , '/');
+                                setcookie("token_user" , $token , time()+(3600*24*2) , '/');
 
                                 $sql2 = "INSERT INTO rememberme (user_id  , username , token ,email) VALUES (? , ? ,?, ?) ";
                                 $stmt2 = $conn->prepare($sql2);
