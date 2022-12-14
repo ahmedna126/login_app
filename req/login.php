@@ -77,13 +77,13 @@ include "function.php";
 
 
         }else{
-            $er = "an error accouried&$username_data";
+            $er = "an error accouried";
         header("location: ../login.php?error=$er");
         exit;
         }
         
     }else{
-        $er = "an error accouried&$username_data";
+        $er = "an error accouried";
         header("location: ../login.php?error=$er");
         exit;
     }
