@@ -99,7 +99,7 @@ function validateinput($data){
             $image_size = $_FILES[$image]['size'];
         
                 if ($image_error == 0){
-                   $extenstion_allow = array("jpg" , "png" , "jped");
+                   $extenstion_allow = array("jpg" , "png" , "jpeg");
                    $extenstion = pathinfo($image_name , PATHINFO_EXTENSION);
                    if(in_array($extenstion , $extenstion_allow)){
                         if ($image_size <= 2000000){
