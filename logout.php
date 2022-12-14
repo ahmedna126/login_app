@@ -1,7 +1,7 @@
 
     <?php
 
-    setcookie('token_user' , '' , time()-1000 );
+    setcookie('token_user' , '' , time()-(3600*24*2) );
 
         session_start();
         session_unset();
