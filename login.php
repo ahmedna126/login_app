@@ -71,7 +71,7 @@
             <div class="form-group">
             <input  name="login" type="submit" value="login">   <br>
         </div>
-        <a href="register.php"><button>register account</button></a>
+        <a href="register.php">register account</a>
 
         </form>
 
